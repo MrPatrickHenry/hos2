@@ -65,76 +65,7 @@ var addthis_config = {
                                     <span class="fa fa-search"></span>
                                 </button>
      </form>
-          <?php do { ?>
-      
-      
-      <li><a  href="brands.php?keyword=sale&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>"> <?php echo $row_brandssidebar['advertiser_name']; ?></a>
-      
-      <!-- submenus -->
-      
-            <ul class="list-unstyled">
-    
-      <li class="sub-nav">
-      <a  href="brands.php?keyword=dresses&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Dresses<span class="icon"></span>
-      </a>
-      </li>
-            
-               <li class="sub-nav">
-      <a  href="brands.php?keyword=shoes&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Shoes<span class="icon"></span>
-      </a>
-      </li>
-      
-          <li class="sub-nav">
-      <a  href="brands.php?keyword=tops&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Tops<span class="icon"></span>
-      </a>
-      </li>
-      
-        <li class="sub-nav">
-      <a  href="brands.php?keyword=boots&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Boots<span class="icon"></span>
-      </a>
-      </li>
-          
-           <li class="sub-nav">
-      <a  href="brands.php?keyword=shirts&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Shirts<span class="icon"></span>
-      </a>
-      </li> 
-      
-         <li class="sub-nav">
-      <a  href="brands.php?keyword=skirts&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Skirts<span class="icon"></span>
-      </a>
-      </li>  
-      
-      
-        <li class="sub-nav">
-      <a  href="brands.php?keyword=jackets&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      Jackets<span class="icon"></span>
-      </a>
-      </li> 
-      
-       <li class="sub-nav">
-      <a  href="brands.php?keyword=sale&mid=<?php echo $row_brandssidebar['mid']; ?>&name=<?php echo $row_brandssidebar['advertiser_name']; ?>">
-      All Sale<span class="icon"></span>
-      </a>
-      </li> 
-            
-      </ul>
-       
-      
-      
-      <!-- end of submenus -->
-      
-      
-      
-            <?php } while ($row_brandssidebar = mysql_fetch_assoc($brandssidebar)); ?>
-
-          
-       
+         
       </ul>
       </nav>
           
@@ -336,24 +267,3 @@ function showHide(shID) {
    
     </body>
 </html>
-<?php
-mysql_free_result($Recordset1);
-
-mysql_free_result($tops);
-
-mysql_free_result($skirts);
-
-mysql_free_result($Jackets);
-
-mysql_free_result($shoes);
-
-mysql_free_result($Trousers);
-
-mysql_free_result($Sale);
-
-mysql_free_result($Brands);
-
-mysql_free_result($keywords);
-
-mysql_free_result($brandssidebar);
-?>
