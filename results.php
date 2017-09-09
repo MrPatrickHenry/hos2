@@ -6,100 +6,6 @@ $mid= $_GET["mid"];
 ?>
 
 
-<?php require_once('Connections/local.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-mysql_select_db($database_local, $local);
-$query_Recordset1 = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers`";
-$Recordset1 = mysql_query($query_Recordset1, $local) or die(mysql_error());
-$row_Recordset1 = mysql_fetch_assoc($Recordset1);
-$totalRows_Recordset1 = mysql_num_rows($Recordset1);
-
-mysql_select_db($database_local, $local);
-$query_tops = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$tops = mysql_query($query_tops, $local) or die(mysql_error());
-$row_tops = mysql_fetch_assoc($tops);
-$totalRows_tops = mysql_num_rows($tops);
-
-mysql_select_db($database_local, $local);
-$query_skirts = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$skirts = mysql_query($query_skirts, $local) or die(mysql_error());
-$row_skirts = mysql_fetch_assoc($skirts);
-$totalRows_skirts = mysql_num_rows($skirts);
-
-mysql_select_db($database_local, $local);
-$query_Jackets = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$Jackets = mysql_query($query_Jackets, $local) or die(mysql_error());
-$row_Jackets = mysql_fetch_assoc($Jackets);
-$totalRows_Jackets = mysql_num_rows($Jackets);
-
-mysql_select_db($database_local, $local);
-$query_shoes = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$shoes = mysql_query($query_shoes, $local) or die(mysql_error());
-$row_shoes = mysql_fetch_assoc($shoes);
-$totalRows_shoes = mysql_num_rows($shoes);
-
-mysql_select_db($database_local, $local);
-$query_Trousers = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$Trousers = mysql_query($query_Trousers, $local) or die(mysql_error());
-$row_Trousers = mysql_fetch_assoc($Trousers);
-$totalRows_Trousers = mysql_num_rows($Trousers);
-
-mysql_select_db($database_local, $local);
-$query_Sale = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$Sale = mysql_query($query_Sale, $local) or die(mysql_error());
-$row_Sale = mysql_fetch_assoc($Sale);
-$totalRows_Sale = mysql_num_rows($Sale);
-
-mysql_select_db($database_local, $local);
-$query_Brands = "SELECT `advertiser_name`, `advertiser_url`, `mid` FROM `advertisers";
-$Brands = mysql_query($query_Brands, $local) or die(mysql_error());
-$row_Brands = mysql_fetch_assoc($Brands);
-$totalRows_Brands = mysql_num_rows($Brands);
-
-mysql_select_db($database_local, $local);
-$query_keywords = "SELECT advertiser_name FROM advertisers WHERE status = 'active' limit 0,11";
-$keywords = mysql_query($query_keywords, $local) or die(mysql_error());
-$row_keywords = mysql_fetch_assoc($keywords);
-$totalRows_keywords = mysql_num_rows($keywords);
-
-mysql_select_db($database_local, $local);
-$query_brandssidebar = "SELECT * FROM `advertisers` WHERE `advertiser_name` not like '{*}%' and `country` = 'GB'";
-$brandssidebar = mysql_query($query_brandssidebar, $local) or die(mysql_error());
-$row_brandssidebar = mysql_fetch_assoc($brandssidebar);
-$totalRows_brandssidebar = mysql_num_rows($brandssidebar);
-?>
-
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="UTF-8">
@@ -290,7 +196,11 @@ var addthis_config = {
             $curl = curl_init();
 
             # CURL SETTINGS.
-            curl_setopt($curl, CURLOPT_URL, "http://productsearch.linksynergy.com/productsearch?token=4acca9e0828906b9c844db7474c1db8ce6c652a873a8c625550cb57000808f5c&keyword=%22".$keyword."%22&cat=%22%22&MaxResults=100&pagenumber=9&sort=productname&sorttype=asc");
+            curl_setopt($curl, CURLOPT_URL, "http://productsearch.linksynergy.com/productsearch?token=4acca9e0828906b9c844db7474c1db8ce6c652a873a8c625550cb57000808f5c&keyword=%22".$keyword."%22&cat=%22%22&MaxResults=20&pagenumber=1");
+
+
+
+
 
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 0);
