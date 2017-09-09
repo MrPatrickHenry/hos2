@@ -196,7 +196,7 @@ var addthis_config = {
             $curl = curl_init();
 
             # CURL SETTINGS.
-            curl_setopt($curl, CURLOPT_URL, "http://productsearch.linksynergy.com/productsearch?token=4acca9e0828906b9c844db7474c1db8ce6c652a873a8c625550cb57000808f5c&keyword=%22".$keyword."%22&cat=%22%22&MaxResults=20&pagenumber=1");
+            curl_setopt($curl, CURLOPT_URL, "http://productsearch.linksynergy.com/productsearch?token=4acca9e0828906b9c844db7474c1db8ce6c652a873a8c625550cb57000808f5c&keyword=%22".$keyword."%22&cat=%22sale%22&MaxResults=20&pagenumber=1");
 
 
 
