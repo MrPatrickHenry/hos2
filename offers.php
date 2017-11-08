@@ -166,8 +166,8 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			
 			
             ?>  
-           <h2 style="float:left">
-     No Items Available</h2>
+          <!-- <h2 style="float:left">
+     No Items Available</h2> -->
 
          </div><!-- /container -->
  </div>
